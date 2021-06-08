@@ -1,0 +1,374 @@
+*{box-sizing: border-box;
+    font-family: "cafe";
+}
+/* importados*/
+@font-face{
+    src: url('fuentes/cafe.ttf');
+    font-family: 'cafe';}
+
+@import url("fonts/style.css");
+     
+
+/*Variables de color*/
+:root{
+    --pri: #448;
+    --light: #eee;
+    --dark: #333;
+    --hover: rgba(51,51,51,.5);
+    --gradient: linear-gradient(#86c, #224);}
+
+
+header{ 
+        padding: 15% 1rem;
+        background-image: url(imagenes/logo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+        height: 100vh; /* vh: alto del viewport; vw: ancho del viewport; */
+        max-height: 600px;
+    }
+    
+
+body{
+    margin: 0; 
+    }
+/* Menu de navegación++++++++++++++++++++++*/
+
+nav{
+    position: sticky;
+    top:0;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: radial-gradient(circle, rgb(67, 31, 77) 43%, rgba(46, 18, 44, 0.989) 79%);
+    flex-wrap: wrap;
+}
+
+.menu{
+    display:none;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu a:hover{
+    background-color: #bb7af8;
+}
+
+.menu.active{
+    display:block;
+}
+
+.menu a{
+    padding-left: 5%;
+}
+/*hipervinculo del navegador*/
+
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: .5rem 1rem;
+    display: block;}
+
+nav a:hover{color: #eaf6f5;}
+
+
+
+nav > a:last-child{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--dark);
+   text-align: center;
+    opacity: .3;
+    font-weight: bold;
+}
+nav > a:last-child:hover{
+    opacity: .6;}
+
+
+.brand {
+    background-image: url(imagenes/home.svg);
+    background-size: 5rem;
+		background-position: center;
+		background-repeat: no-repeat;
+        padding: .5rem 1rem;
+        margin-left: .5rem;
+        border-radius: 30%;
+        width: 60px;
+        height: 55px;
+        display: none;
+}
+
+/*-------------------- Menu desplegable de talleres----------------------*/
+
+
+
+
+
+/*boton de menu+++++++++++++++*/
+.button{
+    cursor: pointer;
+    margin: .5rem;
+    margin-left: 0px;
+    outline: none;
+    border-radius: .5rem;
+    border: .2rem solid var(--light);
+    padding: .25rem .6rem;
+    color: var(--light);
+    background-color: transparent;
+    font: bold 1.2rem sans-serif;
+}
+.button:hover{
+    color: var(--pri);
+    background-color: var(--light)}
+
+/*Section-----------------*/
+
+.titulosh1{
+    background: rgb(200,64,233);
+    background: radial-gradient(circle, rgba(200,64,233,1) 43%, rgba(238,0,225,0.989233193277311) 79%);
+    border-radius: 20px 55px 10px 55px;
+    box-shadow:  -.5rem .5rem 10px rgb(173, 63, 192);
+    padding-left: 1.5rem;
+    margin-top: -10px;
+    margin-left: -11px;
+    margin-bottom: 20px;
+    color:white;
+    text-align: left;
+    font-size: 35px;
+    text-shadow: 0.0.1rem rgba(0, 0, 0, 0.781);}
+    
+    
+section{box-shadow: -1px 4px 15px gray;
+        border-radius: 10px 55px 10px 55px;
+        padding: 1rem;
+        padding-top:16px;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        border-top: none;
+        margin: 1rem auto;
+        max-width: 992px;
+        margin: auto;
+        padding: 1rem;
+    }
+
+
+
+
+
+h2{ color:rgb(32, 70, 77);
+    text-align: left;
+    font-size: 30px;
+    font-family:"cafe";
+    
+
+}
+/* Estilo de la H2 de la seccion TALLERes */
+.taller
+{
+    color:rgb(7, 12, 11);
+    text-align: left;
+    font-size: 25px;
+    font-family:"cafe";
+    
+}
+
+/* Estilo de los parrafos */
+.texto{
+    font-size: 20px;
+    margin: auto;
+    color:rgb(2, 12, 14) ;
+    font-family: "cafe";
+    padding-left: 10px;
+    
+}
+
+footer{
+    background: #e570e7; 
+    background: -moz-linear-gradient(top,  #e570e7 9%, #c85ec7 29%, #a849a3 91%); 
+    background: -webkit-linear-gradient(top,  #e570e7 9%,#c85ec7 29%,#a849a3 91%); 
+    background: linear-gradient(to bottom,  #e570e7 9%,#c85ec7 29%,#a849a3 91%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e570e7', endColorstr='#a849a3',GradientType=0 ); 
+    width: 100%;
+    height: 200px;
+    }
+footer h2{ text-align: center;
+    text-shadow: 1px -1px  6px white
+}
+
+/*Boton de "volver" a menu*/
+.salir{
+    font-size: 12px;
+color: #B40486;
+text-decoration: none;}
+
+.salir:hover{color:turquoise;}
+
+/* Formulario*/
+.formulario {
+    margin-top: 30px;
+   
+}
+.tituloFormulario{text-shadow: -1px 2px 3px black;}
+    
+label{font-family:"cafe"; 
+        color: rgb(32, 70, 77);
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 0;
+        
+   }
+
+    label:focus{box-shadow: 0 0 .5rem #eee}
+
+    input{
+        width: 190px;
+        height: 20px;
+        background-color:#ffffff;
+        display: block; 
+        border-radius: 5%; 
+        padding-left: 8px;
+        margin: 8px; 
+        margin-top: 0;
+        border: solid 2px black;
+        box-shadow: -1px 3px 4px #141414;
+        outline: none;}
+
+#mensaje
+{
+    box-shadow: -1px 3px 4px #0e0d0d;
+    border: solid 2px black;
+    resize: none;
+    width: 190px;
+    height: 70px;
+    margin: 2px;
+    background-color:#f8fafa;
+}
+
+/* Boton de enviar formulario*/
+#btn{background-color:whitesmoke;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin: 8px;
+}
+
+#btn:hover{
+    background: rgb(200,64,233);
+    background: radial-gradient(circle, rgba(200,64,233,1) 43%, rgba(238,0,225,0.989233193277311) 79%);
+    font-weight: bold;
+    color: white;
+
+}
+
+section div {
+display: flex;
+align-items: center;
+
+}
+ /*Redes sociales del footer*/
+    .social{
+		max-width: 540px;
+		display: flex;
+		justify-content: center;
+		margin: 1rem auto;
+	}
+	.social a{
+		width: 4rem;
+		height: 5rem;
+		border-radius: .5rem;
+		background-size: 3rem;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.facebook{ background-image: url(imagenes/facebook.svg);}
+	
+    .instagram{ background-image: url(imagenes/instagram.svg); }
+	
+    
+    .gmail{ background-image: url(imagenes/gmail.png); }
+	
+	
+	.social a:hover{
+		background-size: 4rem;
+	}
+	
+	.social a:active{
+		background-color: #eeee;
+		box-shadow: 0 0 .5rem #eee;}
+
+
+/* texto de bienvenida a ser psico*/
+.bienvenida{
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 80px;
+    text-shadow: -1px 5px 6px #585858;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+/*Fondo de bienvenida imagen espaldas*/
+.presentacion{
+background-image: url(imagenes/espaldas.jpg);
+background-size: cover;
+background-position: center;
+height: 500px;
+background-repeat: repeat;
+border: solid 3px black;
+box-shadow: -1px 3px 3px black;
+background-attachment: fixed;
+}
+
+/*foto vero*/
+#vero{
+  float: left;
+  border: none;
+    
+	padding-right: 3%;	
+}
+
+/*copy*/
+.copy{ font-family: Arial, Helvetica, sans-serif;
+font-size: 10px;
+padding: 1rem;
+color: white;}
+
+.copy a{text-decoration: none;}
+
+
+/*Pantallas small (smartphones)*/
+
+/*Pantallas medianas tablets */
+@media screen and (min-width:768px)
+{.menu{
+    display: flex;
+    width: auto;
+}
+.menu a {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 20px;
+        padding: .5rem 2rem;
+ 
+  
+    
+}
+nav .button{display:none;} 
+
+}
+/*Pantallas grandes*/
+
+/*Extra large devices*/
+
