@@ -1,235 +1,188 @@
-*{box-sizing: border-box;
-    font-family: "cafe";
-}
-/* importados*/
-@font-face{
-    src: url('fuentes/cafe.ttf');
-    font-family: 'cafe';}
-
-@import url("fonts/style.css");
-     
-
-/*Variables de color*/
-:root{
-    --pri: #448;
-    --light: #eee;
-    --dark: #333;
-    --hover: rgba(51,51,51,.5);
-    --gradient: linear-gradient(#86c, #224);}
-
-
-header{ 
-        padding: 15% 1rem;
-        background-image: url(imagenes/logo.jpg);
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 200px;
-        height: 100vh; /* vh: alto del viewport; vw: ancho del viewport; */
-        max-height: 600px;
+    /* importados*/
+    @font-face{
+        src: url('fuentes/cafe.ttf');
+        font-family: 'cafe';
     }
-    
-
-body{
-    margin: 0; 
+    @import url("fonts/style.css");
+    /* Variables */
+    :root{
+        --pri: #448;
+        --light: #eee;
+        --dark: #333;
+        --hover: rgba(51,51,51,.5);
+        --gradient: linear-gradient(#86c, #224);
+    }
+    /*General Rules*/
+    *{
+        box-sizing: border-box;
+        font-family: "cafe";
+    }
+    body, 
+    section h2,
+    .menu, 
+    .bienvenida{
+        margin: 0; 
+    }
+    nav,
+    section div,
+    header,
+    .header,
+    .bienvenida,
+    .social,
+    .menu a{
+        display: flex;
+        align-items: center;
+    }
+    .header{  
+        max-width: 960px;
+        min-height: 200px;
+        max-height: 600px;
+        height: 100vh; /* vh: alto del viewport; vw: ancho del viewport; */
+        justify-content: center;
+        padding: 15% 1rem;
+        background: url(imagenes/logo.jpg) no-repeat fixed center;
+        background-size: cover;
+    }
+    header{
+        max-width: 960px;
+        margin: 1rem auto;
     }
 /* Menu de navegación++++++++++++++++++++++*/
-
-nav{
-    position: sticky;
-    top:0;   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: radial-gradient(circle, rgb(67, 31, 77) 43%, rgba(46, 18, 44, 0.989) 79%);
-    flex-wrap: wrap;
-}
-
-.menu{
-    display:none;
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.menu a:hover{
-    background-color: #bb7af8;
-}
-
-.menu.active{
-    display:block;
-}
-
-.menu a{
-    padding-left: 5%;
-}
+    nav{
+        position: sticky;
+        top:0;   
+        justify-content: space-between;
+        background: radial-gradient(circle, rgb(67, 31, 77) 43%, rgba(46, 18, 44, 0.989) 79%);
+        flex-wrap: wrap;
+    }
+    .menu{
+        display:none;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+    }
+    .menu a{ padding-left: 5% }
+    .menu a:hover{ background-color: #bb7af8 }
+    .menu.active{ display:block }
 /*hipervinculo del navegador*/
-
-nav a{
-    text-decoration: none;
-    color: white;
-    padding: .5rem 1rem;
-    display: block;}
-
-nav a:hover{color: #eaf6f5;}
-
-
-
-nav > a:last-child{
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: var(--dark);
-   text-align: center;
-    opacity: .3;
-    font-weight: bold;
-}
-nav > a:last-child:hover{
-    opacity: .6;}
-
-
-.brand {
-    background-image: url(imagenes/home.svg);
-    background-size: 5rem;
-		background-position: center;
-		background-repeat: no-repeat;
+    nav a{
+        text-decoration: none;
+        color: var(--light);
         padding: .5rem 1rem;
+    }
+    nav a:hover{ color: #eaf6f5 }
+    nav > a:last-child{
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: var(--dark);
+        text-align: center;
+        opacity: .3;
+        font-weight: bold;
+    }
+    nav > a:last-child:hover{ opacity: .6 }
+    .brand {
+        display: none;
+        width: 3.75rem;
+        height: 3.5rem;
         margin-left: .5rem;
         border-radius: 30%;
-        width: 60px;
-        height: 55px;
-        display: none;
-}
-
+        background: url(imagenes/home.svg) no-repeat center;
+        background-size: 5rem;
+    }
 /*-------------------- Menu desplegable de talleres----------------------*/
-
-
-
-
-
 /*boton de menu+++++++++++++++*/
-.button{
-    cursor: pointer;
-    margin: .5rem;
-    margin-left: 0px;
-    outline: none;
-    border-radius: .5rem;
-    border: .2rem solid var(--light);
-    padding: .25rem .6rem;
-    color: var(--light);
-    background-color: transparent;
-    font: bold 1.2rem sans-serif;
-}
-.button:hover{
-    color: var(--pri);
-    background-color: var(--light)}
-
+    .button{
+        cursor: pointer;
+        margin: .5rem;
+        margin-left: 0px;
+        outline: none;
+        border-radius: .5rem;
+        border: .2rem solid var(--light);
+        padding: .25rem .6rem;
+        font: bold 1.2rem sans-serif;
+        color: var(--light);
+        background-color: transparent;
+    }
+    .button:hover{
+        color: var(--pri);
+        background-color: var(--light)
+    }
 /*Section-----------------*/
-
-.titulosh1{
-    background: rgb(200,64,233);
-    background: radial-gradient(circle, rgba(200,64,233,1) 43%, rgba(238,0,225,0.989233193277311) 79%);
-    border-radius: 20px 55px 10px 55px;
-    box-shadow:  -.5rem .5rem 10px rgb(173, 63, 192);
-    padding-left: 1.5rem;
-    margin-top: -10px;
-    margin-left: -11px;
-    margin-bottom: 20px;
-    color:white;
-    text-align: left;
-    font-size: 35px;
-    text-shadow: 0.0.1rem rgba(0, 0, 0, 0.781);}
-    
-    
-section{box-shadow: -1px 4px 15px gray;
-        border-radius: 10px 55px 10px 55px;
-        padding: 1rem;
-        padding-top:16px;
-        padding-bottom: 16px;
-        padding-left: 16px;
-        border-top: none;
+    main{ padding: 1rem }
+    section h2{
+        margin-top: 1rem;
+        border-radius: .5rem 1.75rem;
+        padding: .5rem;
+        padding-left: 1.5rem;
+        color:var(--light);
+        background: 
+            rgb(200,64,233)
+            radial-gradient(
+                circle, 
+                rgba(200, 64, 233, 1) 43%, 
+                rgba(238, 0, 225, 0.98) 79%);
+        font-size: 2rem;
+        text-shadow: 0.0.1rem rgba(0, 0, 0, 0.781);
+        box-shadow: -.5rem .5rem 10px rgb(173, 63, 192);
+    } 
+    section{
+        max-width: 960px;
         margin: 1rem auto;
-        max-width: 992px;
-        margin: auto;
-        padding: 1rem;
+        border-radius: 1rem 1.75rem;
+        padding: 1rem 1.5rem;
+        box-shadow: -1px 4px 15px gray;
     }
-
-
-
-
-
-h2{ color:rgb(32, 70, 77);
-    text-align: left;
-    font-size: 30px;
-    font-family:"cafe";
-    
-
-}
+    h2{ 
+        color:rgb(32, 70, 77);
+        font-size: 30px;
+        font-family:"cafe";
+    }
 /* Estilo de la H2 de la seccion TALLERes */
-.taller
-{
-    color:rgb(7, 12, 11);
-    text-align: left;
-    font-size: 25px;
-    font-family:"cafe";
-    
-}
-
-/* Estilo de los parrafos */
-.texto{
-    font-size: 20px;
-    margin: auto;
-    color:rgb(2, 12, 14) ;
-    font-family: "cafe";
-    padding-left: 10px;
-    
-}
-
-footer{
-    background: #e570e7; 
-    background: -moz-linear-gradient(top,  #e570e7 9%, #c85ec7 29%, #a849a3 91%); 
-    background: -webkit-linear-gradient(top,  #e570e7 9%,#c85ec7 29%,#a849a3 91%); 
-    background: linear-gradient(to bottom,  #e570e7 9%,#c85ec7 29%,#a849a3 91%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e570e7', endColorstr='#a849a3',GradientType=0 ); 
-    width: 100%;
-    height: 200px;
+    .taller{
+        color:rgb(7, 12, 11);
+        font: bold 1.5rem 'cafe', sans-serif;
     }
-footer h2{ text-align: center;
-    text-shadow: 1px -1px  6px white
-}
+/* Estilo de los parrafos */
+    .texto{
+        margin: 1rem auto;
+        padding-left: .5rem;
+        font: normal 1.25rem 'cafe', sans-serif;
+        color:rgb(2, 12, 14);
+    }
+    footer{
+        min-height: 200px;
+        padding: 1rem;
+        background-color: #e570e7; 
+        background: -moz-linear-gradient(top,  #e570e7 9%, #c85ec7 29%, #a849a3 91%); 
+        background: -webkit-linear-gradient(top,  #e570e7 9%,#c85ec7 29%,#a849a3 91%); 
+        background: linear-gradient(to bottom,  #e570e7 9%,#c85ec7 29%,#a849a3 91%); 
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e570e7', endColorstr='#a849a3',GradientType=0 ); 
+    }
+    footer h2{ 
+        text-align: center;
+        text-shadow: 1px -1px  6px var(--light)
+    }
 
 /*Boton de "volver" a menu*/
-.salir{
-    font-size: 12px;
-color: #B40486;
-text-decoration: none;}
-
-.salir:hover{color:turquoise;}
-
+    .salir{
+        font-size: 12px;
+        color: #B40486;
+        text-decoration: none;
+    }
+    .salir:hover{color:turquoise;}
 /* Formulario*/
-.formulario {
-    margin-top: 30px;
-   
-}
-.tituloFormulario{text-shadow: -1px 2px 3px black;}
-    
-label{font-family:"cafe"; 
-        color: rgb(32, 70, 77);
-        font-size: 20px;
-        padding: 10px;
-        margin-top: 0;
-        
-   }
-
-    label:focus{box-shadow: 0 0 .5rem #eee}
-
+    .formulario { margin-top: 2rem }
+    .tituloFormulario{ text-shadow: -1px 2px 3px var(--dark) }
+    label{
+        padding: .5rem;
+        font: 1.5rem 'cafe' sans-serif; 
+        color: rgb(32, 70, 77);    
+    }
+    label:focus{ box-shadow: 0 0 .5rem #eee }
     input{
         width: 190px;
         height: 20px;
@@ -239,136 +192,94 @@ label{font-family:"cafe";
         padding-left: 8px;
         margin: 8px; 
         margin-top: 0;
-        border: solid 2px black;
+        border: solid 2px var(--dark);
         box-shadow: -1px 3px 4px #141414;
         outline: none;}
-
-#mensaje
-{
-    box-shadow: -1px 3px 4px #0e0d0d;
-    border: solid 2px black;
-    resize: none;
-    width: 190px;
-    height: 70px;
-    margin: 2px;
-    background-color:#f8fafa;
+    #mensaje{
+        box-shadow: -1px 3px 4px #0e0d0d;
+        border: solid 2px var(--dark);
+        resize: none;
+        width: 190px;
+        height: 70px;
+        margin: 2px;
+        background-color:#f8fafa;
 }
 
 /* Boton de enviar formulario*/
-#btn{background-color:whitesmoke;
-    padding-top: 0px;
-    padding-bottom: 20px;
-    margin: 8px;
-}
-
-#btn:hover{
-    background: rgb(200,64,233);
-    background: radial-gradient(circle, rgba(200,64,233,1) 43%, rgba(238,0,225,0.989233193277311) 79%);
-    font-weight: bold;
-    color: white;
-
-}
-
-section div {
-display: flex;
-align-items: center;
-
-}
- /*Redes sociales del footer*/
+    #btn{background-color:var(--light)smoke;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        margin: 8px;
+    }
+    #btn:hover{
+        background: 
+            rgb(200,64,233) 
+            radial-gradient(
+                circle, 
+                rgba(200,64,233,1) 43%, 
+                rgba(238,0,225,0.98) 79%);
+        color: var(--light);
+        font-weight: bold;
+    }
+/*Redes sociales del footer*/
     .social{
 		max-width: 540px;
-		display: flex;
 		justify-content: center;
 		margin: 1rem auto;
 	}
 	.social a{
-		width: 4rem;
+		width: 5rem;
 		height: 5rem;
 		border-radius: .5rem;
 		background-size: 3rem;
 		background-position: center;
 		background-repeat: no-repeat;
 	}
-
-	.facebook{ background-image: url(imagenes/facebook.svg);}
-	
-    .instagram{ background-image: url(imagenes/instagram.svg); }
-	
-    
-    .gmail{ background-image: url(imagenes/gmail.png); }
-	
-	
-	.social a:hover{
-		background-size: 4rem;
-	}
-	
-	.social a:active{
-		background-color: #eeee;
-		box-shadow: 0 0 .5rem #eee;}
-
-
+    .social a:hover{ background-size: 4rem }
+    .social a:active{
+        background-color: #eeee;
+        box-shadow: 0 0 .5rem #eee;
+    }
+	.facebook { background-image: url(imagenes/facebook.svg)  }
+    .instagram{ background-image: url(imagenes/instagram.svg) }
+    .gmail    { background-image: url(imagenes/gmail.png)     }
 /* texto de bienvenida a ser psico*/
-.bienvenida{
-    margin: 0;
-    color: white;
-    text-align: center;
-    font-size: 80px;
-    text-shadow: -1px 5px 6px #585858;
-    display: flex;
-    align-items: center;
-    flex-direction:column;
-}
+    .bienvenida{
+        color: var(--light);
+        text-shadow: -1px 5px 6px #585858;
+        flex-direction:column;
+        font-size: calc(5vw + .8rem);
+        text-align: center;
+    }
 /*Fondo de bienvenida imagen espaldas*/
-.presentacion{
-background-image: url(imagenes/espaldas.jpg);
-background-size: cover;
-background-position: center;
-height: 500px;
-background-repeat: repeat;
-border: solid 3px black;
-box-shadow: -1px 3px 3px black;
-background-attachment: fixed;
-}
-
+    .presentacion{
+        background-image: url(imagenes/espaldas.jpg) repeat fixed center;
+        background-size: cover;
+        min-height: 500px;
+        border: solid 3px var(--dark);
+        box-shadow: -1px 3px 3px var(--dark);
+    }
 /*foto vero*/
-#vero{
-  float: left;
-  border: none;
-    
-	padding-right: 3%;	
-}
-
+    #vero{
+        float: left;
+        padding-right: 3%;	
+    }
 /*copy*/
-.copy{ font-family: Arial, Helvetica, sans-serif;
-font-size: 10px;
-padding: 1rem;
-color: white;}
-
-.copy a{text-decoration: none;}
-
-
-/*Pantallas small (smartphones)*/
-
+    .copy{ 
+        padding: 1rem;
+        font-family: 1rem Arial, Helvetica, sans-serif;
+        color: var(--light);
+    }
+    .copy a{ text-decoration: none }
 /*Pantallas medianas tablets */
-@media screen and (min-width:768px)
-{.menu{
-    display: flex;
-    width: auto;
-}
-.menu a {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        font-size: 20px;
-        padding: .5rem 2rem;
- 
-  
-    
-}
-nav .button{display:none;} 
-
-}
-/*Pantallas grandes*/
-
-/*Extra large devices*/
-
+    @media screen and (min-width:768px){
+        .menu{
+            display: flex;
+            width: auto;
+        }
+        .menu a {
+            padding: .5rem 2rem;
+            font: bold 1.25rem 'cafe', sans-serif;
+        }
+        nav .button{ display:none } 
+    }
